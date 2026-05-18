@@ -1,8 +1,19 @@
 # MALA_light_tails
 
-Lightweight computational research code for studying drift diagnostics of the Metropolis-adjusted Langevin algorithm under light-tailed targets.
+Research code for studying the convergence behavior of the Metropolis-Adjusted Langevin Algorithm (MALA) when the target measure has lighter than Gaussian tails.
 
-## Layout
+## Main Idea
+Given a Lyapunov function $V: \mathbb{R}^d \rightarrow [1,\infty)$, we study the drift quantity $PV(x)-V(x)=\int_{\mathbb{R}^d}[V(y)-V(x)]\alpha(x,y)Q(x,dy)$, where $Y\sim Q(x,\cdot)$ is the MALA proposal and &\alpha(x,y)& is the Metropolis-Hastings acceptance probability. 
+
+The drift integral is decomposed into three regions:
+
+* A_1: inward moves;
+* A_2: local moves;
+* A_3: outward moves.
+
+The objective is to understand which regions dominate the drift and how this behavior changes in the tails.
+
+## Repository Structure
 
 ```text
 MALA_light_tails/
@@ -27,6 +38,21 @@ MALA_light_tails/
 - `notebooks/01_drift_diagnostics.ipynb`: sequential drift report
 - `notebooks/02_exponential_lyapunov.ipynb`: exponential Lyapunov experiments
 
+## Main Diagnostics 
+
+The generated diagnostic plots display:
+
+1. Total drift:
+    $PV(x)-V(x)$.
+2. Regional drift contributions:
+    A_1,\ A_2,\ A_3.
+3. Proposal probabilities:
+    $Q(x,A_k)$.
+4. Accepted transition mass:
+    $\mathbb E[\alpha(x,Y)\mathbf 1_{A_k}]$.
+5. Proposal overshoot diagnostic:
+    $R(x)=\frac{h^2\|\nabla U(x)\|}{\|x\|}$.
+
 ## Quick start
 
 Install the lightweight dependencies:
@@ -43,6 +69,3 @@ python MALA_1D.py --lyapunov poly --m 1 --p 2 --h 0.05 --plot
 
 Plots are saved to `results/figures/` by default when `--plot` is used.
 
-## Notes
-
-This repository is intentionally research-oriented: small modules, notebook-driven experiments, and minimal packaging overhead.
