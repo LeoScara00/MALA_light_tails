@@ -9,9 +9,9 @@ where $Y\sim Q(x,\cdot)$ is the MALA proposal and $\alpha(x,y)$ is the Metropoli
 
 The drift integral is decomposed into three regions:
 
-* $A_1 := {y \in \mathbb{R}^d: ||y|| < ||x|| -\epsilon}$ represents inward moves;
-* $A_2 := {y \in \mathbb{R}^d: ||x|| - \epsilon \leq ||y|| \leq ||x|| + \epsilon}$ represents local moves;
-* $A_3 := {y \in \mathbb{R}^d: ||y|| > ||x|| + \epsilon}$ represents outward moves.
+* $A_1 := \left{y \in \mathbb{R}^d: ||y|| < ||x|| -\epsilon\right}$ represents inward moves;
+* $A_2 := \{y \in \mathbb{R}^d: ||x|| - \epsilon \leq ||y|| \leq ||x|| + \epsilon\}$ represents local moves;
+* $A_3 := \{y \in \mathbb{R}^d: ||y|| > ||x|| + \epsilon\}$ represents outward moves.
 
 The objective is to understand which regions dominate the drift and how this behavior changes in the tails.
 
