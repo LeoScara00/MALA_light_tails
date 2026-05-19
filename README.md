@@ -4,12 +4,12 @@ Research code for studying the convergence behavior of the Metropolis-Adjusted L
 
 ## Main Idea
 Given a Lyapunov function $V: \mathbb{R}^d \rightarrow [1,\infty)$, we study the behavior of the drift quantity \
-                $PV(x)-V(x)=\{\int_{\mathbb{R}^d}[V(y)-V(x)]\alpha(x,y)Q(x,dy)\}$,
+                $$PV(x)-V(x)=\int_{\mathbb{R}^d}[V(y)-V(x)]\alpha(x,y)Q(x,dy)$$,
 where $Y\sim Q(x,\cdot)$ is the MALA proposal and $\alpha(x,y)$ is the Metropolis-Hastings acceptance probability. 
 
 The drift integral is decomposed into three regions:
 
-* $A_1 := \left{y \in \mathbb{R}^d: ||y|| < ||x|| -\epsilon\right}$ represents inward moves;
+* $A_1 := \{ y \in \mathbb{R}^d: \lVert y \rVert < ||x|| -\epsilon \}$ represents inward moves;
 * $A_2 := \{y \in \mathbb{R}^d: ||x|| - \epsilon \leq ||y|| \leq ||x|| + \epsilon\}$ represents local moves;
 * $A_3 := \{y \in \mathbb{R}^d: ||y|| > ||x|| + \epsilon\}$ represents outward moves.
 
