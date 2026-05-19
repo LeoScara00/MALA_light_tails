@@ -3,10 +3,12 @@
 Research code for studying the convergence behavior of the Metropolis-Adjusted Langevin Algorithm (MALA) when the target measure has lighter than Gaussian tails.
 
 ## Main Idea
-Given a Lyapunov function $V: \mathbb{R}^d \rightarrow [1,\infty)$, we study the behavior of the drift quantity \
-                $$
-                PV(x)-V(x)=\displaystyle\int_{\mathbb{R}^d}[V(y)-V(x)]\alpha(x,y)Q(x,dy),
-                $$ \
+Given a Lyapunov function $V: \mathbb{R}^d \rightarrow [1,\infty)$, we study the behavior of the drift quantity 
+
+$$
+PV(x)-V(x)=\displaystyle\int_{\mathbb{R}^d}[V(y)-V(x)]\alpha(x,y)Q(x,dy),
+$$ 
+
 where $Y\sim Q(x,\cdot)$ is the MALA proposal and $\alpha(x,y)$ is the Metropolis-Hastings acceptance probability. 
 
 The drift integral is decomposed into three regions:
