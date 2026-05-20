@@ -11,7 +11,7 @@ $$
 
 where $Y\sim Q(x,\cdot)$ is the MALA proposal and $\alpha(x,y)$ is the Metropolis-Hastings acceptance probability. 
 
-The drift integral is decomposed into three regions:
+The drift integral is decomposed into three additive components, based on the following radial partition of the state-space:
 
 * $A_1 := [ y \in \mathbb{R}^d: \lVert y \rVert < \lVert x \rVert -\epsilon ]$ represents inward moves;
 * $A_2 := [y \in \mathbb{R}^d: \lVert x \rVert - \epsilon \leq \lVert y \rVert \leq \lVert x \rVert + \epsilon]$ represents local moves;

@@ -1,15 +1,18 @@
-REGION_NAMES = ("A1", "A2", "A3")
+import numpy as np
+
+REGION_NAMES = ("A1", "A2", "A3") # radial partition of the state-space 
 
 
 def classify_regions(x, y, eps):
-    if x <= 0:
-        raise ValueError("Region diagnostics require x > 0.")
+    
+    r_x = np.abs(x)
+    r_y = np.abs(y)
 
-    left = (1.0 - eps) * x
-    right = (1.0 + eps) * x
+    left = (1.0 - eps) * r_x
+    right = (1.0 + eps) * r_x
 
     return {
-        "A1": y <= left,
-        "A2": (y > left) & (y < right),
-        "A3": y >= right,
+        "A1": r_y <= left,
+        "A2": (r_y > left) & (r_y < right),
+        "A3": r_y >= right,
     }
